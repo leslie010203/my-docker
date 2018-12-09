@@ -44,17 +44,17 @@
 > 二Docker是一个文本文件，记录着镜像的构建过程
 >
 >     1. 第一个Dockerfile
->    
+>        
 >         用dockerfile创建上节
->    
+>        
 >         1.在某处文件夹中创建 touch Dockerfile 文本文件 
->    
+>        
 >         2.修改文本文件 vim Dockerfiel  
->    
->        ​      FROM ubuntu
->    
->        ​      RUN apt-get update && apt-get install -y vim 保存退出
->    
+>        
+>              FROM ubuntu
+>        
+>              RUN apt-get update && apt-get install -y vim 保存退出
+>        
 >         3.docker build -t  镜像的新名字 -f  Dockerfile文件路径 
 
 >    2.查看镜像分层结构
@@ -141,3 +141,30 @@
 >
 > docker build -t registrty:版本 tag
 
+## 3.5 小结
+
+- 镜像的分层
+- 如何构建镜像
+- 使用Docker Hub 和 registry
+
+镜像的常用命令
+
+ - images 显示镜像列表
+ - histrory 显示镜像构建历史
+ - commit 从容器创建新的镜像
+ - build 从Dockerfile构建新的镜像
+ - tag 给镜像打tag
+ - pull 从registry下载镜像
+ - push 将镜像上传到registry
+ - rmi 删除Docker host中的镜像
+ - search 搜索Docker Hub中的镜像
+
+> 解释       rmi
+>
+> ​	  是只能删除host中的镜像 不会删除registry的镜像
+>
+> ​	  如果一个镜像中对应多个tag只有当最后一个tag被删除时 镜像才被真正删除 镜像才被删除
+
+> 解释      search 
+>
+> ​	  让我们必须打开浏览器 在命令行中搜索Docker Hub中的镜像
